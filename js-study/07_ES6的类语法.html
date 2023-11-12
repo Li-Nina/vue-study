@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    /*
+      ES6 的类语法
+        + 语法:
+          class 类名 {
+            // 原先 ES5 内的构造函数体
+            constructor () {}
+
+            // 直接书写原型上的方法即可
+
+            // 书写静态属性和方法, 需要加上一个 static 关键字即可
+          }
+        + 注意: 必须和 new 关键字连用
+          => 不和 new 关键字连用, 会直接报错
+    */
+
+    // function Person(name, age) {
+    //   this.name = name
+    //   this.age = age
+    // }
+
+    // // // 原型添加一个方法
+    // // // 2. 原型上的方法, 目的是为了给 实例使用
+    // Person.prototype.sayHi = function () { console.log('hello world') }
+
+    // // // 书写静态属性和方法
+    // Person.a = 100
+    // Person.go = function () { console.log('跑起来') }
+
+    // var p1 = new Person('jack', 18)
+    // console.log(p1)//Person {name: 'jack', age: 18}
+    // p1.sayHi()//hello world
+
+    // // // 1. 构造函数本质还是一个函数, 可以不和 new 关键字连用
+    // var p2 = Person('Rose', 20)
+    // console.log(p2)//undefined    不和new连用，则无法实现构造函数的实例化，
+
+    // console.log(Person.a)//100
+    // Person.go()//跑起来
+
+
+    // 类的书写
+    class Person {
+      constructor (name, age) {
+        // 这里按照 ES5 的构造函数体书写
+        this.name = name
+        this.age = age
+      }
+
+      // 直接书写原型上的方法即可
+      sayHi () { console.log('你好 世界') }
+
+      // 静态属性
+      static a = 100
+
+      // 静态方法
+      static go () { console.log('running') }
+    }
+
+    var p1 = new Person('张三', 18)
+    console.log(p1)
+    p1.sayHi()
+
+    // 使用静态属性和静态方法
+    Person.go()
+    console.log(Person.a)
+
+
+  </script>
+</body>
+</html>

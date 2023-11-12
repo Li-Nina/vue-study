@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function randomNum(max, min) {
+            // 1、求0~两数差的随机数
+            var res = Math.floor( Math.random() * ( max - min + 1 ))
+            //2、 使用随机数+相对小的数字
+            var res2 = res + min
+            // 3、把计算结果作为返回值
+            return res2
+        }
+        result = randomNum(15, 26)
+        console.log(result)
+    </script>
+</body>
+</html>

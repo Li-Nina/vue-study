@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(n){
+            var result = 1
+            // 结束条件
+            while(n>1){
+                result *= n
+                // 步长
+                n--
+            }
+            return result
+        }
+        r1 = fn(12)
+        r2 = fn(10)
+        console.log(r1, r2)
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、准备两个时间节点
+        var time1 = new Date( 2021, 1, 23, 11, 22, 18)
+        var time2 = new Date( 2021, 1, 25, 3, 45, 36)
+        function getDiff(time1, time2) {
+            // 获取两个时间节点的时间戳
+            var ms1 = time1.getTime()
+            var ms2 = time2.getTime()
+            // 两个时间戳差值换算成秒
+            var sub = Math.ceil((ms2 - ms1)/1000)
+            // 开始换算获取日、小时、分、秒
+            var days = Math.floor(sub/(60*60*24))
+            var hours = Math.floor((sub%(60*60*24))/(60*60))
+            var minutes = Math.floor((sub%(60*60))/60)
+            var seconds = sub%60
+            return {days:days,hours:hours,minutes:minutes,seconds:seconds}
+        }
+        var res = getDiff(time1, time2)
+        console.log(res)
+    </script>
+</body>
+</html>

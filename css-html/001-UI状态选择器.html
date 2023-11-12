@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:enabled{
+            background: yellow;
+        }
+        input:disabled{
+            background: gray;
+        }
+        input:focus{
+            background: lightgreen;
+        }
+        
+        input[type=checkbox]{
+            /* 去掉默认样式 */
+            appearance: none;
+            border: 1px solid black;
+            width: 10px;
+            height: 10px;
+        }
+        /* :checked用于checkout或者radio */
+        input:checked{
+            background: red;
+        }
+        p::selection{
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        用户名<input type="text"><br>
+        密码<input type="password"><br>
+        记住用户名<input type="checkbox"><br>
+        <input type="submit" value="提交">
+    </form>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit sit blanditiis sequi accusantium repellendus dolorem laboriosam at animi voluptates ducimus, veritatis iusto porro quaerat quas, corporis quisquam qui quae assumenda.</p>
+</body>
+</html>

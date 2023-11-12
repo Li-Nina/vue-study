@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[class="box1"]{
+            background-color: yellow;
+        }
+        /* div.box1等价于div[class="box1"] */
+        /* 以某个元素开头 */
+        /* div[class^="box"]{
+            border: 1px solid blue;
+        } */
+        /* 以某个元素结尾 */
+        div[class$="2"]{
+            color: aqua;
+        }
+        /* 包含某个元素 */
+        /* div[class*=b]{
+            border: 1px solid green;
+        } */
+        /* div[class]{
+            color: red;
+        } */
+        /* p[class]{
+            background: red;
+        } */
+        input[name]{
+            background: yellow;
+        }
+        input[type=email]{
+            background: aqua;
+        }
+        /* div[class*="1"],p[class*="1"]{
+            color: green;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="box1">div-11111111</div>
+    <div class="box2">div-22222222</div>
+    <div>div-33333333333</div>
+    <div class="box1">div-4444444444</div>
+    <div class="box1 box2">div-555555555</div>
+    <p class="p1">p-11111111111</p>
+    <p class="p2">p-22222222222</p>
+    <p>p-33333333333</p>
+    <div>
+        <h1>注册页面</h1>
+        <div>用户名：<input type="text" name="username"></div>
+        <div>密码：<input type="password" name="password"></div>
+        <div>年龄：<input type="number" name="age"></div>
+        <div>邮箱：<input type="email"></div>
+    </div>
+</body>
+</html>

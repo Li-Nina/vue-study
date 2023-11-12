@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- js渲染 -->
+        </tbody>
+    </table>
+    <script>
+        var users = [
+        {id:1, name:"前端小灰狼", age:18},
+        {id:2, name:"狗狗", age:38},
+        {id:3, name:"猫咪", age:18}
+        ]
+        var tbody = document.querySelector('tbody')
+
+        // 1.循环遍历users数组
+        users.forEach(function(item){
+            console.log(item)
+            // 2.每一个对象生成一个tr标签
+            var tr = document.createElement('tr')
+            // 3.循环遍历item
+            for(var key in item){
+                // 4.生成td标签
+                var td = document.createElement('td')
+                td.innerText = item[key]
+                // 5.将td标签插入到tr内
+                tr.appendChild(td)
+            }
+            // 6.将本次tr插入tbody内
+            tbody.appendChild(tr)
+        });
+            
+
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            jQuery 的 ajax 请求
+            + 注意:
+                => 因为发送 ajax 请求, 不是操作 DOM
+                => 不需要依赖选择器去获取到元素
+                => 他的使用, 是直接依赖 jQuery 或者 $ 变量来使用
+                -> 语法: $.ajax({ 本次发送 ajax 的配置项 })
+            + 配置项:
+                1. url: 必填, 表示请求地址
+                2. method: 选填, 默认是 GET, 表示请求方式
+                3. data: 选填, 默认是 '', 表示携带给后端的参数
+                4. async: 选填, 默认是 true, 表示是否异步
+                5. success: 选填, 表示请求成功的回调函数
+                6. error: 选填, 表示请求失败的回调函数
+        */
+        $.ajax({
+            url:'http://localhost:8888/test/first',
+            success:function (res) {
+                //res接受的就是后端给回的响应结果
+                console.log(res)
+            }
+        })
+        $.ajax({
+            url:'http://localhost:8888/test/third',
+            data:{name:'前端小灰狼',age:18},
+            success:function (res) {
+                //res接受的就是后端给回的响应结果
+                console.log(res)
+            }
+        })
+        $.ajax({
+            url:'http://localhost:8888/test/third',
+            method:'POST',
+            async:'true',
+            data:{name:'前端小灰狼',age:18},
+            success:function (res) {
+                //res接受的就是后端给回的响应结果
+                console.log(res)
+            }
+        })
+    </script>
+    
+</body>
+</html>

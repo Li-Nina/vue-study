@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.content{
+            display: none;
+        }
+        div.content:target{
+            display: block;
+        }
+        /* E:target选择匹配E的所有元素，且匹配元素被相关URL指向 */
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#aaa">aaa</a>
+        <div id="aaa" class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde magnam vitae recusandae excepturi, illum eos quis minus itaque quasi beatae repellendus optio ea facilis animi, maiores, aperiam reprehenderit repellat. Quisquam?</div>
+    </div>
+    <div>
+        <a href="#bbb">bbb</a>
+        <div id="bbb" class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde magnam vitae recusandae excepturi, illum eos quis minus itaque quasi beatae repellendus optio ea facilis animi, maiores, aperiam reprehenderit repellat. Quisquam?</div>
+    </div>
+    <div>
+        <a href="#ccc">ccc</a>
+        <div id="ccc" class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde magnam vitae recusandae excepturi, illum eos quis minus itaque quasi beatae repellendus optio ea facilis animi, maiores, aperiam reprehenderit repellat. Quisquam?</div>
+    </div>
+</body>
+</html>

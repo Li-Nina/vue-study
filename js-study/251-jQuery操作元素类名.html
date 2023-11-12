@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="a b c d"></div>
+    <button>切换</button>
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        
+        /*
+        操作元素类名
+        */
+
+        // 1. addClass()
+        // 语法: 元素集合.addClass(需要添加的类名)
+        $('div').addClass('e')
+
+        // 2. removeClass()
+        // 语法: 元素集合.removeClass(你要删除的类名)
+        $('div').removeClass('c')
+
+        // 3. toggleClass()
+        // 语法: 元素集合.toggleClass(你要切换的类名)
+        // 切换: 如果本身有这个类名, 那么就是删除, 如果本身没有这个类名, 那么就是添加
+        bnt = document.querySelector('button')
+        bnt.onclick = function(){
+            $('div').toggleClass('box')
+        }
+    </script>
+</body>
+</html>

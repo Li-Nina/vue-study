@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 940px;
+            height: 100px;
+            margin: 0,atuo;
+            background: yellow;
+        }
+        .box div{
+            float: left;
+            width: 300px;
+            height: 100px;
+            background: red;
+            margin-right: 20px;
+        }
+        .box div:last-child{
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 通过某种结构关系查找页面元素
+    比如：
+    匹配某元素第一个子元素
+    匹配某元素最后一个子元素 -->
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

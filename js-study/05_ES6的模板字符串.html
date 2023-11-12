@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    /*
+      模板字符串
+        + 其实, 就是 ES6 内新增的定义字符串的方式
+        + 以前:
+          => var str = '内容'
+          => var str = "内容"
+        + 现在:
+          => var str = `内容`
+
+      区别:
+        1. 可以换行书写
+        2. 可以直接在字符串内解析变量
+          => 当你需要解析变量的时候, 直接书写 ${ 变量 }
+
+    */
+
+    // 1.
+    // var s1 = 'hello world'
+    // var s2 = "hello world"
+    // var s3 = `
+
+    // hello
+    // world
+
+
+    // `
+    // console.log(s1)
+    // console.log(s2)//不支持换行
+    // console.log(s3)//支持空格、换行等
+
+
+    // 2.
+    var age = 18
+    var s1 = `我叫前端小灰狼, 今年 ${age} 岁`
+    console.log(s1)
+
+    var s2 = '我叫前端小灰狼, 今年 ${age} 岁'
+    console.log(s2)
+
+    var s3 = "我叫前端小灰狼, 今年 ${age} 岁"
+    console.log(s3)
+
+  </script>
+</body>
+</html>

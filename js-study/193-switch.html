@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var foot = 40
+        switch (foot) {
+            case 37:
+                console.log("买一双37号的鞋")
+                // break
+                // 如果不写break的话，后边的选项无论如何都会执行，会从第一个满足条件的选项开始自动向下穿透，直到遇到break为止
+            case 40:
+                console.log("买一双40号的鞋")
+                // break
+            default:
+                console.log("我去别家店里看一看")
+        }
+    </script>
+</body>
+</html>

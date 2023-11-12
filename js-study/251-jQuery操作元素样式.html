@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      height: 200px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="width: 100px;"></div>
+
+  <script src="./jquery/jquery.js"></script>
+  <script>
+    /*
+      操作元素样式
+        + css()
+    */
+
+    // 1. css 获取样式
+    // 注意: 可以获取到元素的行内样式, 也可以获取到元素的非行内样式
+    // 语法: 元素集合.css(你要获取的样式名称)
+    // 返回值: 该样式的样式值
+    // console.log($('div').css('width'))
+    // console.log($('div').css('height'))
+    // console.log($('div').css('background-color'))
+
+
+    // 2. css 设置样式
+    // 语法: 元素集合.css(样式名, 样式值)
+    // 注意: 当你需要给一个元素设置样式值为 px 单位的时候, 可以省略单位不写
+    // $('div').css('width', '300px')
+    // $('div').css('height', 500)
+    // $('div').css('background-color', 'red')
+
+
+    // 3. css 批量设置样式
+    // 语法: 元素集合.css({ 你所有需要设置的样式 })
+    $('div').css({
+      width: 260,
+      height: 320,
+      opacity: 0.68,
+      'background-color': 'purple'
+    })
+  </script>
+</body>
+</html>

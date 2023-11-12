@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .left,.right{
+            width: 200px;
+            height: 100%;
+        }
+        .left{
+            background-color: red;
+            float: left;
+        }
+        .right{
+            background-color: yellow;
+            float: right;
+        }
+        .body{
+            width: calc(100% - 400px);
+            height: 100%;
+            background-color: blue;
+            /* 浮动只对后续有影响，对前边没有影响 */
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+    <div class="body"></div>
+    <div class="right"></div>
+    
+</body>
+</html>

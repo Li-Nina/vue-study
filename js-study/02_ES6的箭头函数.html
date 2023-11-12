@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <script>
+    // var fn1 = function () { console.log('我是 fn1 函数') }
+    // fn1()
+
+    // var fn2 = () => { console.log('我是 fn2 函数') }
+    // fn2()
+
+    /*
+      箭头函数的特殊之处
+
+      1. 箭头函数某些时候可以省略 ()
+        => 当你的形参只有一个的时候, 可以不写 () 
+
+      2. 箭头函数某些时候可以省略 {}
+        => 当你的代码只有一句话的时候, 可以不写 {}
+        => 并且会自动把这一句话的结果当做函数的返回值
+
+      3. 箭头函数内没有 arguments
+
+      4. 箭头函数内没有 this
+        => 箭头函数内的 this 就是外部作用域的 this
+    */
+    // 1. 箭头函数某些时候可以省略 ()
+    //     => 当你的形参只有一个的时候, 可以不写 () 
+
+    // 1.
+    // var fn1 = () => { console.log('我没有形参') }
+    // fn1()
+
+    // var fn2 = a => { console.log('我一个形参 : ', a) }
+    // fn2(100)
+
+    // var fn3 = (a, b) => { console.log('我两个形参: ', a, b) }
+    // fn3(100, 200)
+
+
+    // 2.
+    // var fn1 = (a, b) => a + b
+    // console.log(fn1(10, 20))
+
+    // 3.
+    // 3. 箭头函数内没有 arguments，会报错
+
+    // var fn1 = () => {
+    //   console.log(arguments)
+    // }
+    // fn1(100, 200, 300)
+    
+    // 构造函数有arguments,Arguments(3) [100, 200, 300, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+    // var fn2 = function () {
+    //   console.log(arguments)
+    // }
+    // fn2(100, 200, 300)
+
+    // 4.
+    var obj = {
+      fn: function () { console.log(this) },
+      fn2: () => { console.log(this) }
+    }
+
+    obj.fn() // this 因为 fn 函数被 obj 调用, 所以 this 是 obj,输出{fn: ƒ, fn2: ƒ}
+    obj.fn2() // 因为是箭头函数, 内部没有 this, 就是外部作用域的 this。输出Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p1{
+            font-size: 16px;
+            /* color: burlywood; */
+            /* color: rgb(255, 0, 0); */
+            color: #14c145;
+            /* font-weight:100-900 */
+            /* 100 细体 lighter
+            400 正常 normal
+            700 加粗 bold
+            900 更粗体 bolder*/ 
+            /* font-weight: 700; */
+            /* lighter,normal,bold,bolder; */
+            /* font-style: 
+            /* font-style:italic(斜体字)/oblique(更倾斜的文字)/normal */
+            font-weight: bolder;
+            font-style: italic;
+            /* text-decoration: underline, line-through,overline; none*/
+            text-decoration: underline;
+        }
+        /* 字体是中文字体、英文字体中有空格时，需加双引号 */
+        .p2{
+            font-family:"宋体","Gill Sans";
+            /* 英文词间距一般用word-spacing */
+            word-spacing: 10px;
+            /* text-transform: capitalize,lowercase,uppercase,none;大小写 */
+            text-transform: capitalize;
+        }
+        .p3{
+            /* 中文字间距一般用letter-spacing */
+            letter-spacing: 2px;
+            font-size: 20px;
+            /* 首行缩进2个字符，跟文本大小无关 */
+            text-indent: 2em;
+        }
+        /* font:font-style font-weight font-size/line-height font-family */
+        /* font:italic 800 30px/80px "宋体"顺序不能改变，必须同时指定font-size和font-family属性时才起作用 */
+        .p4{
+            font:italic bold 20px/1em 微软雅黑
+        }
+        a{
+            /* 去掉下划线 */
+            text-decoration: none;
+        }
+        h1{
+            font-weight: normal;
+        }
+        .box1{
+            width: 500px;
+            /*文本水平对齐 text-align: left,center,right,justify; */
+            text-align: right;
+            background-color: yellow;
+        }
+        .box2{
+            width: 500px;
+            text-align: justify;
+            /* 两端对齐，多行文本中使用 */
+            line-height: 20px;
+            background-color: rgb(0, 255, 42);
+        }
+        .box3{
+            width: 500px;
+            height: 100px;
+            background-color: yellow;
+            /* 单行文本当行高等于高度值时，默认居中 */
+            line-height: 100px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <p class="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ratione doloribus vero exercitationem cupiditate dolor odit accusamus, alias minus asperiores pariatur iste facilis illum esse laborum tempora in inventore fuga.
+    </p>
+    <p class="p2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ratione doloribus vero exercitationem cupiditate dolor odit accusamus, alias minus asperiores pariatur iste facilis illum esse laborum tempora in inventore fuga.
+    </p>
+    <p class="p3">
+        表单是实现用户与页面后台交互主要组成部分，HTML5在表单的设计上功能更加强大。input类型和属性的多样性大大地增
+        强了HTML可表达的表单形式，再加上新增加的一些表单标签，使得原本需要JavaScript来实现的控件，可以直接使用HTML5
+        的表单来实现；一些如内容提示、焦点处理、数据验证等功能，也可以通过HTML5的智能表单属性标签来完成。
+    </p>
+    <p class="p4">
+        大家好，Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nostrum rem fugit nemo quis eos nesciunt accusantium, dolorem enim. Possimus asperiores dolor eligendi necessitatibus error excepturi neque soluta eveniet molestias.
+    </p>
+    <a href="">百度</a>
+    <h1>我是标题</h1>
+    <div class="box1">大家好</div>
+    <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nobis quibusdam consectetur, obcaecati dicta laboriosam. Sapiente perferendis cum recusandae, cupiditate minus libero totam hic necessitatibus rem nemo culpa nobis dolor?</div>
+    <div class="box3">
+        大家好
+    </div>
+</body>
+</html>

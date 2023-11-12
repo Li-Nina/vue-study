@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li class="a">2</li>
+        <li>3</li>
+        <li class="b">4</li>
+        <li>5
+            <i>子两级</i>
+        </li>
+        <i>子一级</i>
+        <span>我是ul内的一个span标签</span>
+        <li class="a">6</li>
+        <li>7
+            <p>
+                <i>子三级</i>
+            </p>
+        </li>
+        <li id="box">8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        // 筛选器
+        // 1.first()
+        console.log($('li').first())
+        // 2.last()
+        console.log($('li').last())
+        // 3.eq(索引)
+        // 索引从0开始，依次加一
+        console.log($('li').eq(3))
+        // 4.next()
+        console.log($('span').next())
+        // 5.nextAll()
+        console.log($('span').nextAll())
+        // 6.prev()
+        console.log($('span').prev())
+        // 7.prevAll()
+        console.log($('span').prevAll())
+        // 8.parent()
+        console.log($('span').parent())
+        // 9.parents()
+        // 获取到的是该元素所有父级结构，逐层获取，直到html标签为止
+        console.log($('span').parents())
+        // 10.siblings()
+        //获取该元素所有兄弟元素,被选元素的所有同级元素
+        console.log($('span').siblings())
+        // 11.find(选择器)
+        // 找到给元素所有后代元素中，满足选择器要求的元素
+        console.log($('ul').find('i'))
+        
+
+    </script>
+</body>
+</html>

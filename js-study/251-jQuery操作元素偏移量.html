@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            margin: 30px;
+            background: skyblue;
+            overflow:hidden
+            /* 不会和子元素进行外边距合并 */
+
+        }
+        p{
+            width: 300px;
+            height: 300px;
+            margin: 30px;
+            background: orange;
+            /* overflow: hidden; */
+            position: relative;
+
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            <span></span>
+        </p>
+    </div>
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        /*
+        操作元素偏移量
+        */
+        // 1. offset()
+        // 获取元素相对于页面左上角的坐标位置
+        // 注意: 返回值是一个对象数据类型, { top: yyy, left: xxx }
+        console.log('div : ', $('div').offset())
+        console.log('p : ', $('p').offset())
+        console.log('span : ', $('span').offset())
+
+        // 2. position()
+        // 获取的就是元素的定位位置
+        // 注意: 如果你设置的是 right 和 bottom, 会自动帮你换算成 left 和 top 的值给到你
+        console.log($('span').position())
+    </script>
+</body>
+</html>

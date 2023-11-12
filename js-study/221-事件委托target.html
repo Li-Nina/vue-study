@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        ul{
+            width: 800px;
+            height: 600px;
+            background: skyblue;
+            margin: 50px;
+            /* overflow: hidden; */
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: pink;
+            font-size: 20px;
+            color: white;
+            float: left;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 1.获取ul元素
+        ul = document.querySelector('ul')
+        // 2.给ul绑定事件
+        ul.onclick = function (e) {
+            // 3.通过事件目标来判定所点击的对象
+            console.log(e.target.tagName)
+            if(e.target.tagName === 'LI'){
+                console.log("你点击的是li")
+            }            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        我是div标签
+    </div>
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        /*
+        事件的解绑和触发
+        */
+
+        // 准备事件处理函数
+        function handlerA() { console.log('我是 handlerA 事件处理函数') }
+        function handlerB() { console.log('我是 handlerB 事件处理函数') }
+        function handlerC() { console.log('我是 handlerC 事件处理函数') }
+
+        // 给 div 元素绑定事件
+        $('div')
+        .click(handlerA)
+        .click(handlerB)
+        .click(handlerC)
+
+
+        // 1. off() 事件解绑
+        // 1-1. 解绑全部事件处理函数
+        // 语法: 元素集合.off(事件类型)
+        // 会把 div 的 click 事件对应的所有事件处理函数全部移除
+        // $('div').off('click')
+        // 1-2. 解绑指定的事件处理函数
+        // 语法: 元素集合.off(事件类型, 要解绑的事件处理函数)
+        // 会把 div 的 click 事件对应的 handlerB 事件处理函数移除
+        // $('div').off('click', handlerB)
+
+
+        // 2. trigger() 事件触发
+        // 使用代码的方式, 来触发事件
+        // 语法: 元素集合.trigger(事件类型)
+        // 就会触发该元素的该事件
+        // setInterval(function () {
+        // // 表示每 1000ms 触发一次 div 的 click 事件
+        // $('div').trigger('click')
+        // }, 1000)
+        setInterval(function () {
+            $('div').trigger('click')            
+        },1000)
+
+  
+    </script>
+</body>
+</html>

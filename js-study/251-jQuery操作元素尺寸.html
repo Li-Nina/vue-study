@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            border: 20px solid black;
+            margin: 20px;
+            background: skyblue;
+            /* 背景绘制在内容方框内（剪切成内容方框） */
+            background-clip: content-box;
+
+
+
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        /*
+        获取元素尺寸
+            + 注意:
+            1. 不管该元素是否隐藏, 都能获取到该元素的值
+            2. 不管盒子模型是什么状态, 拿到的尺寸区域不变
+        */
+       // 1. width() 和 height()
+        // 获取到的就是元素内容区域的尺寸
+        console.log($('div').width())
+        console.log($('div').height())
+
+        console.log('------------------')
+        // 2. innerWidth() 和 innerHeight()
+        // 包括padding
+        console.log($('div').innerWidth())
+        console.log($('div').innerHeight())
+
+        console.log('------------------')
+        // 3. outerWidth() 和 outerHeight()
+        // 包括border
+        console.log($('div').outerWidth())
+        console.log($('div').outerHeight())
+
+        console.log('------------------')
+        // 4. outerWidth(true) 和 outerHeight(true)
+        // 拿到的包含你设置的 margin 尺寸值
+        console.log($('div').outerWidth(true))
+        console.log($('div').outerHeight(true))
+
+    </script>
+</body>
+</html>

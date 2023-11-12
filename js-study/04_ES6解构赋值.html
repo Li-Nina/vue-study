@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    /*
+      ES6 解构赋值
+    */
+
+    // 1. 解构数组
+    // var arr = [ 'hello', 'world' ]
+
+    // // 开始解构
+    // // 注意: 解构数组使用 []
+    // // a 获取的内容就是 arr[0]
+    // // b 获取的内容就是 arr[1]
+    // var [ a, b ] = arr
+
+    // console.log(a)
+    // console.log(b)
+
+
+    // 2. 解构对象
+    var obj = { name: 'Jack', age: 18 }
+
+    // 开始解构
+    // 注意: 解构对象使用 {}
+    // 表示定义一个叫做 name 的变量, 获取的是 obj 内一个叫做 name 的成员的值
+    // var { name, age, a } = obj
+    // console.log(name)
+    // console.log(age)
+    // console.log(a)//undefined
+
+    // var a = obj.age
+    // console.log(a)
+
+    // 相当于定义变量 a 从 obj 内获取一个叫做 a 的成员的值
+    // var { a } = obj
+    // console.log(a)//undefined
+    // 可以起一个别名
+    // 相当于顶一个 a 变量, 从 obj 内获取一个叫做 age 的值
+    var { age: a } = obj // => var a = obj.age
+    console.log(a)//18
+  </script>
+</body>
+</html>

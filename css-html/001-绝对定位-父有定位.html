@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+            margin: 0 auto;
+            /* 当有父元素定位，参照物是父元素，且一般是父相（相对）子绝（绝对） ，父如果绝对定位则会在左上角*/
+            position: relative;
+        }
+        .child{
+            width: 200px;
+            height: 200px;
+            background: red;
+            left: 100px;
+            top: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

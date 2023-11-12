@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* :nth-child(even)/:nth-child(2n)-偶数
+        :nth-child(odd)/:nth-child(2n+1)-奇数 */
+        /* :not()否定伪类选择器 */
+
+        .box1 ul>li:not(:nth-child(2n+1)){
+            background: yellow;
+        }
+        .box1 ul>li:nth-child(2){
+            background: blue;
+        }
+        .box1 ul li:first-child{
+            background-color: aqua;
+        }
+        .box1 ul li:not(:last-child){
+            background-color: red;
+        }
+        div{
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        div ul li:only-child{
+            background: green;
+        }
+        div:empty{
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>3333333333</li>
+            <li>444444444</li>
+            <li>5555555555</li>
+        </ul>
+    </div>
+    <div class="box2">
+        <ul>
+            <li>666666</li>
+            <li>7777777</li>
+        </ul>
+    </div>
+    <div class="box3">
+        <ul>
+            <li>8888888</li>
+        </ul>
+    </div>
+    <div></div>
+    <div> </div>
+</body>
+</html>

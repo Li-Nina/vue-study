@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // GET请求
+
+
+        // // 1.创建一个ajax对象
+        // var xhr = new XMLHttpRequest()
+        // // 2.配置本次请求信息
+        // // GET请求，需要在地址后直接拼接参数
+        // xhr.open('GET', 'http://localhost:8888/test/second?name=前端小灰狼&age=18',true)
+        // // 3.配置请求完成后触发事件
+        // xhr.onload = function(){
+        //     //如何拿到后端返回的信息
+        //     // xhr.responseText
+        //     console.log(xhr.responseText)
+        //     // 当后端返回的是json格式字符串时，我们需要单独解析
+        //     // JSON.parse(json格式字符串)
+        //     // 返回值：解析好的js格式的数据
+        //     var res = JSON.parse(xhr.responseText)
+        //     console.log(res)
+        // }
+        // // 4.把本次请求发送出去
+        // xhr.send()
+
+        //POST请求
+
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST', 'http://localhost:8888/test/fourth',true)
+        xhr.onload=function(){
+            console.log(JSON.parse(xhr.responseText))
+        }
+        // 注意：当你在发送POST请求时，并且需要携带参数时候，需要进行特殊说明
+        // 语法：xhr.setRequestHeader('content-type',传递参数的格式)
+        xhr.setRequestHeader('content-type','application/x-www-form-urlencoded')
+        // send后面的（）就是书写请求体的位置
+        xhr.send('name=前端小灰狼&age=18')
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 1. 预解析
+    // 支持预解析
+    // console.log(num)
+    // var num = 100
+    // console.log(num)
+
+    // 定义之前使用 let 声明的变量会报错
+    // console.log(num2)
+    // let num2 = 200
+    // console.log(num2)
+
+    // 定义之前使用 const 声明的变量会报错
+    // console.log(num3)
+    // const num3 = 300
+    // console.log(num3)
+
+
+    // 2. 重复变量名
+    // 支持重复变量名，后者覆盖
+    // var n1 = 100
+    // var n1 = 200
+    // console.log(n1)
+
+    // 使用 let 声明重复变量会报错
+    // let n2 = 100
+    // let n2 = 200
+
+    // 使用 const 声明重复变量会报错
+    // const n3 = 100
+    // const n3 = 200
+
+    // 3. 块级作用域
+    // 任何一个可以执行代码段的 {} 都会限制该变量的使用范围
+    // 可以执行，没有报错
+    // if (true) {
+    //   var num = 200
+    //   console.log(num)
+    // }
+    // console.log(num)
+
+    // if (true) {
+    //   // 因为这个 num 使用 let 关键字定义的
+    //   // 所以只能在这个 if 的 {} 内使用
+    //   let num = 100
+    //   console.log(num)
+    // }
+    // console.log(num)
+
+    // if (true) {
+    //   // 因为这个 num 使用 const 关键字定义的
+    //   // 所以只能在这个 if 的 {} 内使用
+    //   const num = 100
+    //   console.log(num)
+    // }
+    // console.log(num)
+
+
+
+    // 4. 定义时不赋值
+    // let num
+    // console.log(num)//输出undefined
+    // num = 100
+    // console.log(num)
+
+    // 使用 const 的时候, 声明时必须赋值
+    // const num
+    // console.log(num)//报错
+    // num = 100
+    // console.log(num)
+
+
+    // 5. 修改
+    // let num = 100
+    // console.log(num)
+    // num = 200
+    // console.log(num)
+
+    // const num = 100
+    // console.log(num)
+    // // 你试图修改 num 的值, 但是因为是 const 定义的, 不能修改
+    // num = 200
+    // console.log(num)
+
+
+  </script>
+</body>
+</html>

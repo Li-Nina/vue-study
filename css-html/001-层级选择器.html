@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box>li{
+            border: 1px solid red;
+        }
+        /* + 当前元素的后面第一个兄弟 */
+        .child+li{
+            background: yellow;
+        }
+        /* ~ 当前元素的后面的所有亲兄弟 */
+        /* .child~li{
+            background: yellow;
+        } */
+        .content~p{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li>1111111111
+            <ul>
+                <li>1-111111111111</li>
+                <li>1-222222222222</li>
+                <li>1-333333333333</li>
+            </ul>
+        </li>
+        <li class="child">22222222222</li>
+        <li>33333333333</li>
+        <li>44444444444444444</li>
+    </ul>
+    <div class="content"></div>
+    <p>111111111111</p>
+    <p>22222222222222</p>
+    <p>3333333333333</p>
+    <div>
+        <p>4444444</p>
+    </div>
+</body>
+</html>

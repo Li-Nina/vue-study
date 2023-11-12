@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function maopao(arr) {
+            for(j=0;j<arr.length-1;j++){
+                // 假设最小的为j位置
+                var minIndex = j
+                for (i=j+1;i<arr.length;i++){
+                    if(arr[i]<arr[minIndex]){
+                        minIndex = i
+                    }
+                }
+                // 循环后找到此时最小的，交换j位置和最小值
+                var temp = arr[j]
+                arr[j] = arr[minIndex]
+                arr[minIndex] = temp
+            }
+            return arr
+        }
+        var arr= [3,6,9,8,2,4]
+        result = maopao(arr)
+        console.log(arr)
+
+    </script>
+</body>
+</html>
+<!-- 第几轮 j值(假设min)  开始位置    i循环到
+1      0                1       length-1     
+2      1                2       length-1
+3      2                3       length-1 -->

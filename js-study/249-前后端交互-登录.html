@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            width: 500px;
+            padding: 20px;
+            /* height: 200px; */
+            border: 5px solid pink;
+            font-size: 30px;
+            padding-top: 50px;
+
+            display: flex;
+            flex-direction: column;
+            margin: 50px auto;
+            position: relative;
+        }
+        span{
+            color: red;
+            display: none;
+            font-size: 20px;
+            position: absolute;
+            left: 50%;
+            top: 5px;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+
+
+        }
+        label{
+            font-size: 30px;
+            height: 50px;
+        }
+        input{
+            height: 40px;
+            font-size: 24px;
+            padding-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <span>用户名或密码错误！！</span>
+        <label>
+            用户名：
+            <input class="username" type="text">
+        </label>
+        <label>
+            密码：
+            <input  class="password" type="text">
+        </label>
+        <button>登录</button>
+    </form>
+    <script>
+        // 分析需求:
+        // + 问题1: 什么时候进行发送请求 ?
+        //   => 点击登录按钮的时候
+        //   => 需要给 form 标签绑定一个表单提交事件
+        // + 问题2: 需要拿到哪些信息 ?
+        //   => 需要拿到用户填写的用户名和密码
+        // + 问题3: 需要如何发送给后端 ?
+        //   => 按照接口文档的规范进行发送
+        // + 问题4: 请求完成以后, 我们需要做什么 ?
+        //   => 根据后端返回的信息, 进行一些后续的操作
+        //   => 如果后端返回的信息是登录成功, 那么我们进行页面跳转
+        //   => 如果后端返回的是登录失败, 那么我们提示用户错误
+        // 0.获取表单元素
+        var loginForm = document.querySelector('form')
+        var nameInp = document.querySelector('.username')
+        var pwdInp = document.querySelector('.password')
+        var errBox = document.querySelector('.error')
+        // 1.给form标签绑定一个表单提交事件
+        loginForm.onsubmit = function (e) {
+            //阻止表单的默认提交行为
+            e.preventDefault();
+            // 2.拿到填写的用户名和密码
+            var name = nameInp.value
+            var pwd = pwdInp.value
+            // 2-2验证
+            if(!name||!pwd) return alert('请填写完整')
+            // 3.发送ajax请求
+            var xhr = new XMLHttpRequest()
+            xhr.open('POST', 'http://localhost:8888/user/login',true)
+            xhr.onload=function(){
+                var res = JSON.parse(xhr.responseText)
+                console.log(res)
+
+                //条件判断
+                if(res.code===0){
+                    //登录失败
+                    errBox.style.display = 'block'
+                }else{
+                    // 登录成功
+                    window.location.href = './home.html'
+                }
+            }
+            xhr.setRequestHeader('content-type','application/x-www-form-urlencoded')
+            // send后面的（）就是书写请求体的位置
+            xhr.send('username='+name+'&password='+pwd)
+        }
+        
+
+
+    </script>
+</body>
+</html>

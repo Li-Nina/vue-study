@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 3000px;
+        }
+        .header{
+            width: 100%;
+            height: 80px;
+            color: white;
+            background: lightblue;
+            line-height: 80px;
+            font-size: 30px;
+            text-align: center;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            transition: top .5s linear;
+
+            
+            position: fixed;
+            top:-80px;
+            left:0px;
+            
+        }
+        .totop{
+            width: 50px;
+            height: 50px;
+            color: white;
+            background: pink;
+            line-height: 25px;
+            font-size: 20px;
+            text-align: center;
+            position: fixed;
+            bottom:50px;
+            right:50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">顶部</div>
+    <div class="totop">回到顶部</div>
+    <script>
+        // 1.获取元素
+        var header = document.querySelector('.header')
+        var totop = document.querySelector('.totop')
+        // 2.绑定滚动事件
+        window.onscroll = function () {
+            // 获取浏览器卷去的高度
+            var height = document.documentElement.scrollTop || document.body.scrollTop
+            console.log(height)
+            // 判断卷去的高度
+            if (height >= 300){
+                // window.getComputedStyle(header).top = '0px'
+                header.style.top = '0px'
+                totop.style.display = 'block'
+            } else {
+                header.style.top = '-80px'
+                totop.style.display = 'none'
+            }
+        }
+        // 3.设置点击事件
+        totop.onclick = function () {
+            window.scrollTo({
+                top:0,
+                behavior:'smooth'
+            })
+        }
+
+    </script>
+</body>
+</html>

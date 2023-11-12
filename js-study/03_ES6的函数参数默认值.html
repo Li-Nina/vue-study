@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    function fn(a = 100, b = 200) {
+      // 表示声明了两个形参
+      // 其中 a 设置默认值为 100
+      // 其中 b 设置默认值为 200
+      console.log('a : ', a)
+      console.log('b : ', b)
+      console.log('---------------------')
+    }
+
+    // 两个实参都没有传递, 都会使用默认值
+    fn()
+
+    // 给 a 进行了赋值, a 就使用 10
+    // b 继续使用默认值 200
+    fn(10)
+
+    // 给 a 进行了赋值, a 就使用 10
+    // 给 b 进行了赋值, b 就使用 20
+    fn(10, 20)
+  </script>
+</body>
+</html>

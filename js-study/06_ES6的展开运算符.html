@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    /*
+      ES6 的展开运算符
+        + ...
+        + 作用: 展开数组的[] 或者展开对象的 {}
+    */
+
+    // console.log(100, 200, 300, 400)//100,200,300,400
+    // var arr = [ 100, 200, 300, 400 ]
+    // console.log(arr)
+    // console.log(...arr)//100,200,300,400
+
+    // 作用1: 合并数组
+    // var arr1 = [ 10, 20 ]
+    // var arr2 = [ 30, 40 ]
+    // var arr3 = [ 50, 60, 70 ]
+    // var arr4 = [ 80, 90 ]
+    // var arr5 = [ ...arr1, ...arr2, ...arr3, ...arr4 ]
+    // console.log(arr5)//[10, 20, 30, 40, 50, 60, 70, 80, 90]
+
+    // 作用2: 给函数传递参数
+    // var arr1 = [ 10, 20, 17, 7, 31, 22, 12 ]
+    // var max = Math.max(10, 20, 17, 7, 31, 22, 12)
+    // console.log(max)//31
+    // var max = Math.max(arr1)
+    // console.log(max)//NaN
+    // var max = Math.max(...arr1)
+    // console.log(max)//31
+
+
+    // 展开对象
+    var obj = { name: 'Jack', age: 18 }
+    console.log(obj)
+
+    // 作用1: 用来复制对象
+    // 注意: 展开书写的顺序问题, 在有相同成员的时候,新定义的会把之前的覆盖
+    var obj2 = {
+      gender: '男',
+      ...obj,
+      name: 'Rose',
+    }
+    console.log(obj2)
+  </script>
+</body>
+</html>
