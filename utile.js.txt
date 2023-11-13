@@ -5,3 +5,4 @@ add login方法
 4444
 5555
 666-local
+666-remote
